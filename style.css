@@ -1,37 +1,46 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Pirata+One&display=swap');
 
 body {
     font-family: "Inconsolata", monospace;
-    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+    background: linear-gradient(135deg, #a8c66c 0%, #4e5437 100%);
     margin: 0;
     min-height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/rocky-wall.png');
 }
 
 section {
     margin: 30px auto;
     padding: 24px 16px;
-    border-radius: 24px;
-    background: rgba(255,255,255,0.12);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-    max-width: 600px;
+    border-radius: 32px 12px 32px 12px;
+    background: rgba(80, 60, 40, 0.18);
+    box-shadow: 0 12px 40px 0 rgba(60, 40, 20, 0.28);
+    max-width: 650px;
+    border: 4px solid #7d5c2a;
+    position: relative;
+    overflow: hidden;
 }
 
 .titulo {
-    color: #fff;
-    font-size: 56px;
+    font-family: 'Pirata One', cursive;
+    color: #e2b96c;
+    font-size: 62px;
     font-weight: 700;
-    text-shadow: 2px 2px 8px #2193b0;
+    text-shadow: 4px 4px 12px #4e5437, 0 0 8px #7d5c2a;
     margin-bottom: 10px;
     text-align: center;
+    letter-spacing: 2px;
 }
 
 .subtitulos {
-    color: #fff;
-    font-size: 24px;
+    color: #e2b96c;
+    font-size: 28px;
     margin-bottom: 18px;
     text-align: center;
+    font-family: 'Pirata One', cursive;
+    text-shadow: 2px 2px 8px #4e5437;
 }
+
 .tarjetas-ataques {
     display: flex;
     gap: 14px;
@@ -43,36 +52,39 @@ section {
 
 .tarjetas, .tarjetas-ataques {
     display: flex;
-    gap: 18px;
+    gap: 22px;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .tarjeta-de-mokepon {
-    width: 170px;
-    height: 110px;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(33,147,176,0.12);
+    width: 180px;
+    height: 120px;
+    background: linear-gradient(135deg, #d9c89a 60%, #a8c66c 100%);
+    border-radius: 24px 8px 24px 8px;
+    box-shadow: 0 4px 24px rgba(60,40,20,0.18);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    border: 3px dashed #7d5c2a;
+    position: relative;
 }
 
 .tarjeta-de-mokepon:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 24px rgba(33,147,176,0.18);
-    border-color: #2193b0;
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 8px 32px rgba(60,40,20,0.28);
+    border-color: #e2b96c;
+    background: linear-gradient(135deg, #a8c66c 0%, #d9c89a 100%);
 }
 
 .tarjeta-de-mokepon img {
-    width: 60px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(33,147,176,0.10);
+    width: 70px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(60,40,20,0.18);
+    border: 2px solid #7d5c2a;
+    background: #e2b96c;
 }
 
 input {
@@ -80,54 +92,58 @@ input {
 }
 
 input:checked + label {
-    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
-    color: #fff;
-    border-color: #fff;
-    box-shadow: 0 4px 24px rgba(33,147,176,0.22);
+    background: linear-gradient(135deg, #e2b96c 0%, #a8c66c 100%);
+    color: #4e5437;
+    border-color: #e2b96c;
+    box-shadow: 0 8px 32px rgba(60,40,20,0.28);
 }
 
 #boton-mascotas, #ver-mapa button, .boton-de-ataque {
     width: 140px;
-    height: 48px;
-    border-radius: 20px;
-    border: none;
-    font-family: "Inconsolata", monospace;
-    font-size: 18px;
-    background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
-    color: #fff;
+    height: 54px;
+    border-radius: 24px 8px 24px 8px;
+    border: 3px solid #7d5c2a;
+    font-family: 'Pirata One', cursive;
+    font-size: 22px;
+    background: linear-gradient(90deg, #a8c66c 0%, #e2b96c 100%);
+    color: #4e5437;
     margin: 18px 8px 0 8px;
     cursor: pointer;
-    box-shadow: 0 2px 12px rgba(33,147,176,0.12);
-    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 18px rgba(60,40,20,0.18);
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+    letter-spacing: 1px;
 }
-
 #boton-mascotas:hover, #ver-mapa button:hover, .boton-de-ataque:hover {
-    background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
-    transform: scale(1.07);
+    background: linear-gradient(90deg, #e2b96c 0%, #a8c66c 100%);
+    color: #7d5c2a;
+    border-color: #e2b96c;
+    transform: scale(1.09) rotate(-2deg);
 }
 
 .boton-de-ataque {
-    width: 70px;
-    height: 70px;
-    font-size: 32px;
+    width: 74px;
+    height: 74px;
+    font-size: 38px;
     margin: 8px 6px;
     border-radius: 50%;
-    border: 2px solid #2193b0;
-    background: linear-gradient(135deg, #fff 60%, #6dd5ed 100%);
-    color: #2193b0;
-    box-shadow: 0 2px 8px rgba(33,147,176,0.10);
+    border: 3px solid #7d5c2a;
+    background: linear-gradient(135deg, #e2b96c 60%, #a8c66c 100%);
+    color: #4e5437;
+    box-shadow: 0 2px 12px rgba(60,40,20,0.18);
     cursor: pointer;
     transition: background 0.2s, transform 0.2s, border-color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Pirata One', cursive;
 }
 
+
 .boton-de-ataque:hover:not(:disabled) {
-    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
-    color: #fff;
-    border-color: #fff;
-    transform: scale(1.12);
+    background: linear-gradient(135deg, #a8c66c 0%, #e2b96c 100%);
+    color: #7d5c2a;
+    border-color: #e2b96c;
+    transform: scale(1.15) rotate(-6deg);
 }
 
 .boton-de-ataque:disabled {
@@ -139,52 +155,57 @@ input:checked + label {
 }
 
 #mensajes {
-    width: 320px;
-    background: #fff;
-    padding: 20px;
+    width: 340px;
+    background: #d9c89a;
+    padding: 22px;
     margin-top: 24px;
-    border-radius: 20px;
-    box-shadow: 0 2px 12px rgba(33,147,176,0.12);
+    border-radius: 24px 8px 24px 8px;
+    box-shadow: 0 4px 18px rgba(60,40,20,0.18);
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: #2193b0;
-    font-size: 18px;
+    color: #4e5437;
+    font-size: 20px;
+    border: 3px solid #7d5c2a;
 }
 
 #boton-reinicio {
     border: none;
     background: none;
-    color: #2193b0;
-    font-family: "Inconsolata", monospace;
-    font-size: 18px;
+    color: #7d5c2a;
+    font-family: 'Pirata One', cursive;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 12px;
     text-decoration: underline;
+    letter-spacing: 1px;
 }
 
 .ataques {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 14px;
     margin-top: 18px;
 }
 
 #vidas-jugador, #vidas-enemigo {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 0;
-    color: #2193b0;
+    color: #7d5c2a;
     font-weight: bold;
+    font-family: 'Pirata One', cursive;
+    text-shadow: 1px 1px 4px #e2b96c;
 }
 
 .ataques-jugador, .ataques-enemigo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #2193b0;
-    background: rgba(255,255,255,0.18);
-    border-radius: 12px;
-    padding: 10px;
+    color: #4e5437;
+    background: rgba(232,185,108,0.18);
+    border-radius: 16px 4px 16px 4px;
+    padding: 12px;
+    border: 2px solid #a8c66c;
 }
 
 #ver-mapa {
@@ -193,16 +214,33 @@ input:checked + label {
     justify-content: center;
 }
 
+
 #ver-mapa canvas {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(33,147,176,0.12);
+    background: #d9c89a;
+    border-radius: 20px 6px 20px 6px;
+    box-shadow: 0 4px 18px rgba(60,40,20,0.18);
     margin-bottom: 18px;
-    border: 2px solid #2193b0;
+    border: 3px solid #7d5c2a;
 }
 
 #ver-mapa button {
     margin: 8px;
+}
+#historial-combate {
+    margin-top: 16px;
+    background: #e2b96c;
+    border-radius: 16px 4px 16px 4px;
+    padding: 12px;
+    color: #4e5437;
+    border: 2px solid #a8c66c;
+    font-family: 'Pirata One', cursive;
+    font-size: 18px;
+}
+#historial-combate h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #7d5c2a;
+    font-size: 22px;
 }
 
 @media (max-width: 560px) {

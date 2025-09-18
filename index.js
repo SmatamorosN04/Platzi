@@ -147,12 +147,12 @@ class Mokepon{
    }
 }
 
-let cindrome = new Mokepon('Cindrome', './imagen/png-clipart-the-incredibles-buddy-pine-illustration-syndrome-comics-and-fantasy-the-incredibles-thumbnail.png', 5, './imagen/png-clipart-the-incredibles-buddy-pine-illustration-syndrome-comics-and-fantasy-the-incredibles-thumbnail.png')
+let cindrome = new Mokepon('Cindrome', './imagen/trex.png', 5, )
 let increible = new Mokepon('Increible', './imagen/pngwing.com.png', 5 )
-let caladera = new Mokepon('Caladera', './imagen/3135414-middle.png', 5 )
-let cindromeEnemigo = new Mokepon('Cindrome', './imagen/png-clipart-the-incredibles-buddy-pine-illustration-syndrome-comics-and-fantasy-the-incredibles-thumbnail.png', 5)
+let caladera = new Mokepon('Caladera', './imagen/espino.png', 5 )
+let cindromeEnemigo = new Mokepon('Cindrome', './imagen/trex.png', 5)
 let increibleEnemigo = new Mokepon('Increible', './imagen/pngwing.com.png', 5)
-let caladeraEnemigo = new Mokepon('Caladera', './imagen/3135414-middle.png', 5)
+let caladeraEnemigo = new Mokepon('Caladera', './imagen/espino.png', 5)
 
 cindrome.ataque.push(
     { nombre: '⚡',  id: 'boton-rayo'},

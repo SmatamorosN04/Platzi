@@ -6,65 +6,59 @@
     <title>Mokepon</title>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
  
+    <h1 class="title">Dino-war</h1>
 
-    <section id="seleccion-mascota">
-        <h1 class="titulo">Mokepon </h1>
+    <section id="select-pet">
+        <h2 class="subtitle">Elige a tu dinosaurio: </h2>
 
-        <h2 class="subtitulos">Elige a tu mascota: </h2>
+        <div id="cards-container" class="cards"></div>
 
-        <div id="contenedorTarjetas" class="tarjetas">
-            
-        </div>
-
-        <button id="boton-mascotas">Seleccion</button>
+        <button id="btn-pets">Seleccion</button>
     </section>
 
-    <section id="ver-mapa">
-        <h2 class="subtitulos">Recorre el mapa con tu mokepon</h2>
-        <canvas id="mapa"></canvas>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
+    <section id="view-map">
+        <h2 class="subtitle">Recorre el mapa con tu dinosaurio</h2>
+        <canvas id="map"></canvas>
+        <button onmouseup="stopMovement()" onmousedown="moveUp()">Arriba</button>
         <div>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+            <button onmouseup="stopMovement()" onmousedown="moveLeft()">Izquierda</button>
+            <button onmouseup="stopMovement()" onmousedown="moveDown()">Abajo</button>
+            <button onmouseup="stopMovement()" onmousedown="moveRight()">Derecha</button>
         </div>
     </section>
 
+    <section id="select-attack">
+        <h2 class="subtitle">Elige tu ataque: </h2>
 
-    <section id="seleccion-ataque">
-        <h1 class="titulo">Mokepon </h1>
-        <h2 class="subtitulos">Elige tu ataque: </h2>
+        <div id="attacks-container" class="cards-attacks"></div>
 
-        <div id="contenedorAtaques" class="tarjetas-ataques">
-          
-        </div>
-
-
-        <div id="mensajes">
-
-            <p id="resultado">MUCHA SUERTEEEE.</p>
-
-
-            <section id="Reiniciar">
-                <button id="boton-reinicio">Reiniciar</button>
-            </section>
+        <!-- Message block -->
+        <div id="messages">
+            <p id="result">MUCHA SUERTEEEE.</p>
         </div> 
-        
-        <div class="ataques">
-            <div class="ataques-jugador">
-                <p id="vidas-jugador">3</p>
-                <p id="mascota-jugador"></p> 
-                <div id="ataques-del-jugador"></div>
+
+        <!-- Restart button hidden by default -->
+        <section id="restart" style="display: none;">
+            <button id="btn-restart">Reiniciar</button>
+        </section>
+
+        <div class="attacks">
+            <div class="attacks-player">
+                <p id="lives-player">3</p>
+                <p id="pet-player"></p> 
+                <div id="player-attacks"></div>
             </div>
 
-            <div class="ataques-enemigo">
-                <p id="vidas-enemigo">3</p>
-                <p id="mascota-enemigo"></p>
-                <div id="ataques-del-enemigo"></div>
+            <div class="attacks-enemy">
+                <p id="lives-enemy">3</p>
+                <p id="pet-enemy"></p>
+                <div id="enemy-attacks"></div>
             </div>
         </div>
+    </section>
 </body>
 </html>

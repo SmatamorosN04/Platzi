@@ -1,12 +1,71 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Pirata+One&display=swap');
 
+/* 🎨 Color Palette */
+:root {
+    --color-green: #a8c66c;
+    --color-dark-green: #4e5437;
+    --color-brown: #7d5c2a;
+    --color-gold: #e2b96c;
+    --color-beige: #d9c89a;
+    --color-purple: #b907ff;
+    --color-blue: #4101f0;
+    --color-black: #221f19;
+    --color-white: #eee;
+    --color-gray: #aaa;
+    --color-light-gray: #ccc;
+}
+
+/* === GENERAL STYLES === */
 body {
     font-family: "Inconsolata", monospace;
-    background: linear-gradient(135deg, #a8c66c 0%, #4e5437 100%);
+    background: linear-gradient(135deg, var(--color-green) 0%, var(--color-dark-green) 100%);
     margin: 0;
     min-height: 100vh;
     background-image: url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+}
+
+/* Start Screen */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--color-green), var(--color-dark-green));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.start-title {
+  color: var(--color-gold);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px var(--color-brown);
+  font-family: 'Pirata One', cursive;
+}
+
+.button-start {
+  padding: 16px 32px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  border: 3px solid var(--color-brown);
+  background: var(--color-gold);
+  color: var(--color-dark-green);
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Pirata One', cursive;
+  transition: 0.3s;
+}
+
+.button-start:hover {
+  background: var(--color-purple);
+  color: var(--color-white);
+  transform: scale(1.05);
+  border-color: var(--color-black);
 }
 
 section {
@@ -16,50 +75,43 @@ section {
     background: rgba(80, 60, 40, 0.18);
     box-shadow: 0 12px 40px 0 rgba(60, 40, 20, 0.28);
     max-width: 650px;
-    border: 4px solid #7d5c2a;
+    border: 4px solid var(--color-brown);
     position: relative;
     overflow: hidden;
 }
 
-.titulo {
+.title {
     font-family: 'Pirata One', cursive;
-    color: #e2b96c;
+    color: var(--color-gold);
     font-size: 62px;
     font-weight: 700;
-    text-shadow: 4px 4px 12px #4e5437, 0 0 8px #7d5c2a;
+    text-shadow: 4px 4px 12px var(--color-dark-green), 0 0 8px var(--color-brown);
     margin-bottom: 10px;
     text-align: center;
     letter-spacing: 2px;
 }
 
-.subtitulos {
-    color: #e2b96c;
+.subtitles {
+    color: var(--color-gold);
     font-size: 28px;
     margin-bottom: 18px;
     text-align: center;
     font-family: 'Pirata One', cursive;
-    text-shadow: 2px 2px 8px #4e5437;
+    text-shadow: 2px 2px 8px var(--color-dark-green);
 }
 
-.tarjetas-ataques {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-}
-
-
-.tarjetas, .tarjetas-ataques {
+/* Cards */
+.cards, .attack-cards {
     display: flex;
     gap: 22px;
     justify-content: center;
     flex-wrap: wrap;
 }
-.tarjeta-de-mokepon {
+
+.card-pet {
     width: 180px;
     height: 120px;
-    background: linear-gradient(135deg, #d9c89a 60%, #a8c66c 100%);
+    background: linear-gradient(135deg, var(--color-beige) 60%, var(--color-green) 100%);
     border-radius: 24px 8px 24px 8px;
     box-shadow: 0 4px 24px rgba(60,40,20,0.18);
     display: flex;
@@ -68,23 +120,23 @@ section {
     gap: 12px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    border: 3px dashed #7d5c2a;
+    border: 3px dashed var(--color-brown);
     position: relative;
 }
 
-.tarjeta-de-mokepon:hover {
-    transform: scale(1.07) rotate(-2deg);
+.card-pet:hover {
+    transform: scale(1.07) rotate(-6deg);
     box-shadow: 0 8px 32px rgba(60,40,20,0.28);
-    border-color: #e2b96c;
-    background: linear-gradient(135deg, #a8c66c 0%, #d9c89a 100%);
+    border-color: var(--color-black);
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-beige) 100%);
 }
 
-.tarjeta-de-mokepon img {
+.card-pet img {
     width: 70px;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(60,40,20,0.18);
-    border: 2px solid #7d5c2a;
-    background: #e2b96c;
+    border: 2px solid var(--color-brown);
+    background: var(--color-gold);
 }
 
 input {
@@ -92,184 +144,295 @@ input {
 }
 
 input:checked + label {
-    background: linear-gradient(135deg, #e2b96c 0%, #a8c66c 100%);
-    color: #4e5437;
-    border-color: #e2b96c;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-green) 100%);
+    color: var(--color-dark-green);
+    border-color: var(--color-gold);
     box-shadow: 0 8px 32px rgba(60,40,20,0.28);
 }
 
-#boton-mascotas, #ver-mapa button, .boton-de-ataque {
+/* Buttons */
+#btn-pets, #view-map button, .attack-button {
     width: 140px;
     height: 54px;
     border-radius: 24px 8px 24px 8px;
-    border: 3px solid #7d5c2a;
+    border: 3px solid var(--color-brown);
     font-family: 'Pirata One', cursive;
     font-size: 22px;
-    background: linear-gradient(90deg, #a8c66c 0%, #e2b96c 100%);
-    color: #4e5437;
+    background: linear-gradient(90deg, var(--color-green) 0%, var(--color-gold) 100%);
+    color: var(--color-dark-green);
     margin: 18px 8px 0 8px;
     cursor: pointer;
     box-shadow: 0 4px 18px rgba(60,40,20,0.18);
     transition: background 0.2s, transform 0.2s, border-color 0.2s;
     letter-spacing: 1px;
 }
-#boton-mascotas:hover, #ver-mapa button:hover, .boton-de-ataque:hover {
-    background: linear-gradient(90deg, #e2b96c 0%, #a8c66c 100%);
-    color: #7d5c2a;
-    border-color: #e2b96c;
+
+#button-pets:hover, #view-map button:hover, .attack-button:hover {
+    background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
+    color: var(--color-brown);
+    border-color: var(--color-gold);
     transform: scale(1.09) rotate(-2deg);
 }
 
-.boton-de-ataque {
-    width: 74px;
-    height: 74px;
-    font-size: 38px;
-    margin: 8px 6px;
-    border-radius: 50%;
-    border: 3px solid #7d5c2a;
-    background: linear-gradient(135deg, #e2b96c 60%, #a8c66c 100%);
-    color: #4e5437;
+.attack-button {
+    width: 180px;
+    min-height: 100px;
+    margin: 6px;
+    padding: 6px;
+    border-radius: 12px;
+    border: 3px solid #000; /* overwritten by JS */
+    background: #fff4; /* overwritten by JS */
+    color: #333;
     box-shadow: 0 2px 12px rgba(60,40,20,0.18);
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s, border-color 0.2s;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Pirata One', cursive;
+    text-align: center;
+    transition: transform 0.2s;
 }
 
-
-.boton-de-ataque:hover:not(:disabled) {
-    background: linear-gradient(135deg, #a8c66c 0%, #e2b96c 100%);
-    color: #7d5c2a;
-    border-color: #e2b96c;
-    transform: scale(1.15) rotate(-6deg);
+.attack-button:hover:not(:disabled) {
+    transform: scale(1.05);
 }
 
-.boton-de-ataque:disabled {
+.attack-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.attack-type {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.attack-strong, .attack-weak {
+    font-size: 12px;
+    color: #333;
+}
+
+.attack-button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    background: #eee;
-    color: #aaa;
-    border-color: #ccc;
+    background: var(--color-white);
+    color: var(--color-gray);
+    border-color: var(--color-light-gray);
 }
 
-#mensajes {
-    width: 340px;
-    background: #d9c89a;
-    padding: 22px;
-    margin-top: 24px;
-    border-radius: 24px 8px 24px 8px;
-    box-shadow: 0 4px 18px rgba(60,40,20,0.18);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: #4e5437;
-    font-size: 20px;
-    border: 3px solid #7d5c2a;
-}
-
-#boton-reinicio {
-    border: none;
-    background: none;
-    color: #7d5c2a;
-    font-family: 'Pirata One', cursive;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 12px;
-    text-decoration: underline;
-    letter-spacing: 1px;
-}
-
-.ataques {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 18px;
-}
-
-#vidas-jugador, #vidas-enemigo {
+/* Player & Enemy Lives */
+#player-lives, #enemy-lives {
     font-size: 36px;
     margin-bottom: 0;
-    color: #7d5c2a;
+    color: var(--color-brown);
     font-weight: bold;
     font-family: 'Pirata One', cursive;
-    text-shadow: 1px 1px 4px #e2b96c;
+    text-shadow: 1px 1px 4px var(--color-gold);
 }
 
-.ataques-jugador, .ataques-enemigo {
+/* Attacks containers */
+#player-attacks, #enemy-attacks {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #4e5437;
-    background: rgba(232,185,108,0.18);
-    border-radius: 16px 4px 16px 4px;
-    padding: 12px;
-    border: 2px solid #a8c66c;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 16px;
+    min-height: 150px;
+    max-height: 350px;
+    overflow-y: auto;
+    border: 2px solid var(--color-brown);
+    margin-bottom: 16px;
+    background: rgba(255,255,255,0.1);
 }
 
-#ver-mapa {
+/* Enemy attacks differentiation */
+#enemy-attacks p { background: rgba(255,50,50,0.4); }
+#player-attacks p { background: rgba(50,150,255,0.4); }
+
+#player-attacks p:hover, #enemy-attacks p:hover {
+    transform: scale(1.05);
+    background: rgba(232,185,108,0.25);
+}
+#btn-pets, #btn-restart {
+    width: 160px;
+    height: 50px;
+    border-radius: 12px 6px 12px 6px;
+    border: 3px solid var(--color-marron);
+    font-family: 'Pirata One', cursive;
+    font-size: 18px;
+    background: linear-gradient(90deg, var(--color-verde) 0%, var(--color-dorado) 100%);
+    color: var(--color-verde-oscuro);
+    cursor: pointer;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s, border-color 0.2s;
+}
+
+#btn-pets:hover, #btn-restart:hover {
+    background: linear-gradient(90deg, var(--color-azul) 0%, var(--color-verde) 100%);
+    color: var(--color-marron);
+    border-color: var(--color-dorado);
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Battle messages */
+#result {
+    background: rgba(0,0,0,0.3);
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 20px;
+    color: var(--color-white);
+    font-weight: bold;
+    text-align: center;
+    max-height: 180px;
+    overflow-y: auto;
+    border: 2px solid var(--color-gold);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    font-size: 18px;
+}
+
+/* Scrollbars */
+#result::-webkit-scrollbar {
+    width: 8px;
+}
+#result::-webkit-scrollbar-thumb {
+    background: var(--color-brown);
+    border-radius: 4px;
+}
+#result::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
+/* Map */
+#view-map {
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-
-#ver-mapa canvas {
-    background: #d9c89a;
+#view-map canvas {
+    background: var(--color-beige);
     border-radius: 20px 6px 20px 6px;
     box-shadow: 0 4px 18px rgba(60,40,20,0.18);
     margin-bottom: 18px;
-    border: 3px solid #7d5c2a;
+    border: 3px solid var(--color-brown);
+}
+/* Contenedor del restart */
+#restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-#ver-mapa button {
+#btn-restart {
+  background: linear-gradient(145deg, #ff5f5f, #d63b3b); /* rojo elegante */
+  border: 2px solid #9c2525;
+  color: white;
+}
+
+#btn-restart:hover {
+  background: linear-gradient(145deg, #d63b3b, #ff5f5f);
+}
+#view-map button {
     margin: 8px;
 }
-#historial-combate {
+
+/* Combat history */
+#combat-history {
     margin-top: 16px;
-    background: #e2b96c;
+    background: var(--color-gold);
     border-radius: 16px 4px 16px 4px;
     padding: 12px;
-    color: #4e5437;
-    border: 2px solid #a8c66c;
+    color: var(--color-dark-green);
+    border: 2px solid var(--color-green);
     font-family: 'Pirata One', cursive;
     font-size: 18px;
 }
-#historial-combate h3 {
+
+#combat-history h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #7d5c2a;
+    color: var(--color-brown);
     font-size: 22px;
 }
 
+/* === MODAL === */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#round-result-text {
+  font-family: 'Pirata One', cursive;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--color-dark-green);
+}
+
+#btn-next-round {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid var(--color-brown);
+  background: var(--color-gold);
+  font-family: 'Pirata One', cursive;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#btn-next-round:hover {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+
+/* === MEDIA QUERIES === */
 @media (max-width: 560px) {
     section {
         max-width: 98vw;
         padding: 12px 4px;
     }
-    .tarjetas, .tarjetas-ataques {
+    .cards, .attack-cards {
         flex-direction: column;
         gap: 12px;
     }
-    #mensajes {
+    #result {
         width: 98vw;
         font-size: 16px;
     }
-    .titulo {
+    .title {
         font-size: 38px;
     }
-    .subtitulos {
+    .subtitles {
         font-size: 18px;
     }
 }
 
 @media (max-width: 350px) {
-    #ver-mapa div {
+    #view-map div {
         flex-direction: column;
         align-items: center;
     }
-    .ataques {
+    .attacks {
         grid-template-columns: 1fr;
     }
 }
